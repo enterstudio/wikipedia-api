@@ -1,3 +1,4 @@
-.idea
+.idea/
 wikipedia-api.iml
-src/test
+src/test/
+target/
