@@ -34,14 +34,14 @@ public class ExtractsBean {
     }
 
     public static class Query {
-        private ArrayList<String> pageids;
+        private ArrayList<Integer> pageids;
         private Map<String, Page> pages;
 
-        public ArrayList<String> getPageids() {
+        public ArrayList<Integer> getPageids() {
             return pageids;
         }
 
-        public void setPageids(ArrayList<String> pageids) {
+        public void setPageids(ArrayList<Integer> pageids) {
             this.pageids = pageids;
         }
 
