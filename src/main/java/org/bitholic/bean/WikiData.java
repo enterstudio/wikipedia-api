@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Created by bitholic on 2016/10/17.
  */
-public class ExtractsBean {
+public class WikiData{
     private String batchcomplete;
     private Query query;
 
