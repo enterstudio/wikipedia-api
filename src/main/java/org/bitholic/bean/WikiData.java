@@ -1,6 +1,6 @@
 package org.bitholic.bean;
 
-import com.sun.org.apache.bcel.internal.generic.RETURN;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -11,6 +11,7 @@ import java.util.Map;
 public class WikiData{
     private String batchcomplete;
     private Query query;
+    private Map<String, Integer> limits;
 
     public Query getQuery() {
         return query;
@@ -65,6 +66,7 @@ public class WikiData{
         private Integer ns;
         private String title;
         private String extract;
+        private ArrayList<Language> langlinks;
 
         public Integer getPageid() {
             return pageid;
@@ -98,9 +100,52 @@ public class WikiData{
             this.extract = extract;
         }
 
+        public ArrayList<Language> getLanglinks() { return langlinks; }
+
+        public void setLanglinks(ArrayList<Language> langlinks) { this.langlinks = langlinks; }
+
         @Override
         public String toString(){
             return "pageid: " + pageid + ", ns: " + ns + ", title: " + title + ", extract: " + extract;
+        }
+    }
+
+    public static class Language {
+        private String lang;
+        private String url;
+
+        @SerializedName("*") private String localName;
+
+        public Language() { }
+
+        public Language(String lang, String url, String localName) {
+            this.lang = lang;
+            this.url = url;
+            this.localName = localName;
+        }
+
+        public String getLang() {
+            return lang;
+        }
+
+        public void setLang(String lang) {
+            this.lang = lang;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public String getLocalName() {
+            return localName;
+        }
+
+        public void setLocalName(String localName) {
+            this.localName = localName;
         }
     }
 }
