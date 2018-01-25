@@ -6,6 +6,7 @@ import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.*;
 import java.util.Iterator;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.Properties;
 /**
  * Created by bitholic on 2016/10/16.
  */
-public class Wikipedia {
+public class Wikipedia implements Serializable {
     //necessary parameter
     private final String titles;
     //optional parameters
@@ -66,7 +67,7 @@ public class Wikipedia {
         prop = query.prop;
         action = query.action;
         lang = query.lang;
-        //private String wwikiURL = "https://" + lang + ".wikipedia.org/w/api.php?format=json&indexpageids&action=" + action + parameters;
+        //private String wikiURL = "https://" + lang + ".wikipedia.org/w/api.php?format=json&indexpageids&action=" + action + parameters;
         wikiURL = "https://" + lang + ".wikipedia.org/w/api.php?format=json&indexpageids&action=" + action + "&titles=" + titles + prop;
     }
 
@@ -90,7 +91,7 @@ public class Wikipedia {
     }
 
     public static void main(String[] args) {
-        Wikipedia wikipedia = new Wikipedia.Query("MacBook_Pro").setLang("zh").addProp("extracts|langlinks").build();
+        Wikipedia wikipedia = new Wikipedia.Query("MacBook_Pro").setLang("en").addProp("extracts|langlinks").build();
         System.out.println(wikipedia.wikiURL);
         System.setProperty("java.net.useSystemProxies", "true");
         System.out.println("detecting proxies");

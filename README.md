@@ -1,10 +1,18 @@
-## Wikipedia查询API的JAVA封装
-暂时只封装了该API下的Query部分的常用功能, 详情请参考[wikipedia-api](https://en.wikipedia.org/w/api.php).
+## wikipedia-api in JAVA.
 
-### 查询API的参数设置
+The [MediaWiki action api](https://www.mediawiki.org/wiki/API:Main_page) is a web service that provides convenient access to wiki features, data and meta-data over HTTP.
+This library help you preproccess the api and transfer the data into java objects. It's easier and more convenient to use for JAVA developer.
 
-下面的介绍以[Albert Einstein](https://en.wikipedia.org/wiki/Albert_Einstein)的页面为例.
-+ prop:
-    + categories - 页面所属的所有分类(最多返回500个)
+-------
 
+## Example
 
+-------
+
+## API
+
+#### Query
+
++ props
+    + categories: list all categories the pages belong to.[more](https://en.wikipedia.org/w/api.php?action=help&modules=query%2Bcategories)
+    
